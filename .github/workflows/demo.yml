@@ -34,7 +34,7 @@ jobs:
           path: dist 
       - name: get assests file name 
         id: publish
-        run: find dist/assest/*.js -type -f -execdir echo 'sf-output={}' >> $GITHUB_OUTPUT ';'
+        run: find dist/assest/*.js -type f -execdir echo 'sf-output={}' >> $GITHUB_OUTPUT ';'
 
   deploy:
     needs: build
