@@ -12,12 +12,12 @@ jobs:
           node-version: 18
       - name: setup dependencies 
         run: npm ci 
-        
+
       - name: run lint
         run: npm lint
 
       - name: run test
-        run: npm test
+        run: npm run test
 
-      - name: run deploy
-        run: npm run 
+      - name: run build
+        run: npm run build
