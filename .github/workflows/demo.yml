@@ -18,6 +18,8 @@ jobs:
   build:
     needs: test
     runs-on: ubuntu-latest
+    outputs:
+      script-file-output: ${{ steps.publish.outputs.sf-output}}
     steps:
       - name: Get code
         uses: actions/checkout@v3
@@ -30,6 +32,9 @@ jobs:
         with:
           name: dist-files
           path: dist 
+      - name: get assests file name 
+        id: publish
+        run: find dist/assest/*.js -t -f -execdir echo 'sf-output={}' >> $GITHUB_OUTPUT ';'
 
   deploy:
     needs: build
@@ -39,6 +44,8 @@ jobs:
         uses: actions/download-artifact@v3 
         with: 
           name: dist-files
+      - name: output file name 
+        run echo "%{{ needs.build.outputs.script-file-output }}"
       - name: output content
         run: ls
       - name: Deploy
