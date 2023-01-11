@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - dev
+      - sec
 env:
   MONGODB_DB_NAME: kieran-demo-db
 jobs:
