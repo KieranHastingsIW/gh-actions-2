@@ -27,14 +27,14 @@ jobs:
         run: npm ci
       - name: Build website
         run: npm run build
-      - name: sstore artifact
+      - name: get assests file name 
+        id: publish
+        run: find dist/assets/*.js -type f -execdir echo 'sf-output={}' >> $GITHUB_OUTPUT ';'
+      - name: store artifact
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
           path: dist 
-      - name: get assests file name 
-        id: publish
-        run: find dist/assest/*.js -type f -execdir echo 'sf-output={}' >> $GITHUB_OUTPUT ';'
 
   deploy:
     needs: build
