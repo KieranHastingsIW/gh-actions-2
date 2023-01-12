@@ -1,8 +1,22 @@
 name: rusable 
-on: workflow_call
+on: workflow_call:
+  inputs: 
+    artifact-name:  
+      description: name of deployable artifact file 
+      required: false 
+      default: dist 
+      type: string 
+
 jobs:
   deploy:
+    needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Output info 
-        run: echo "some output that is dumby"
+      - name: Get build artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: ${{ inputs.artifact-name }}
+      - name: Output contents
+        run: ls
+      - name: Deploy
+        run: echo "Deploying..."
