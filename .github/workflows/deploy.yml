@@ -12,7 +12,7 @@ jobs:
     env:
       MONGODB_CLUSTER_ADDRESS: bigboi
       MONGODB_USERNAME: kieran 
-      MONGODB_PASSWORD: password
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
       PORT: 3456
     environment: testing
     runs-on: ubuntu-latest
