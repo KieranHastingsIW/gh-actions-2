@@ -1,11 +1,12 @@
-name: rusable 
-on: workflow_call:
-  inputs: 
-    artifact-name:  
-      description: name of deployable artifact file 
-      required: false 
-      default: dist 
-      type: string 
+name: reusable 
+on: 
+  workflow_call:
+    inputs: 
+      artifact-name:  
+        description: name of deployable artifact file 
+        required: false 
+        default: dist 
+        type: string 
 
 jobs:
   deploy:
