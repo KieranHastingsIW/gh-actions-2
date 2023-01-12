@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: return ooutput
-        run: echo "{{ needs.deploy.outputs.results }}"
+        run: echo "${{ needs.deploy.outputs.results }}"
 
 
 
