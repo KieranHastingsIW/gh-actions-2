@@ -69,4 +69,4 @@ jobs:
           path: dist
   deploy:
     needs: build
-    uses: ./.github/workfolws/reusable.yml
+    uses: ./.github/workflows/reusable.yml
