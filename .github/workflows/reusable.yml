@@ -14,8 +14,8 @@ on:
 
 jobs:
   deploy:
-  outputs:
-    outcome: ${{steps.set-result.outputs.step-result}}
+    outputs:
+      outcome: ${{steps.set-result.outputs.step-result}}
     runs-on: ubuntu-latest
     steps:
       - name: Get build artifacts
