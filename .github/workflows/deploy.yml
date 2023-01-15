@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - action
 jobs:
   lint:
     runs-on: ubuntu-latest
