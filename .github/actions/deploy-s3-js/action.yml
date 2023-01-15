@@ -1,0 +1,5 @@
+name: 'deploy to aws s3'
+description: 'deploy a static web page in a s3 bukcet'
+runs:
+  using: 'node16'
+  main: 'main.js'
