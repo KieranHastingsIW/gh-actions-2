@@ -13,6 +13,8 @@ jobs:
       - name: use dep action 
         id: cache
         uses: ./.github/actions/cached-deps
+        with: 
+          cache-bool: 'true'
       - name: Lint code
         run: npm run lint
   test:
