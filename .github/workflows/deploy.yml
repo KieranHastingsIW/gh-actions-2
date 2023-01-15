@@ -10,8 +10,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: use dep action 
-        id: cache
+      - name: use dep action 1
+        id: cache1
         uses: ./.github/actions/cached-deps
         with: 
           cache-bool: 'true'
@@ -22,8 +22,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: use dep action 
-        id: cache
+      - name: use dep action 2
+        id: cache2
         uses: ./.github/actions/cached-deps
       - name: Test code
         id: run-tests
@@ -40,8 +40,8 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
-      - name: use dep action 
-        id: cache
+      - name: use dep action 3
+        id: cache3
         uses: ./.github/actions/cached-deps
       - name: Build website
         run: npm run build
